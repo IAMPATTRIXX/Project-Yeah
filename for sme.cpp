@@ -9,8 +9,10 @@ using namespace std;
 
 vector<string> x;
 vector<string> y;
+
 vector<int> p;
 vector<int> c;
+
 vector<float> in;
 vector<float> ou;
 vector<float> pr;
@@ -36,14 +38,12 @@ int main()
   	strftime(buffer,sizeof(buffer),"%d %m %Y",timeinfo);
   	string str(buffer);
 	
-	ofstream inc("income.txt");
-	ofstream ot("outcome.txt");
-	ofstream diff("difference.txt");
+	str=str+" 2"+".txt";
+	
+	ofstream inc(str.c_str());
 	
 	cout<<str<<endl;
-	inc<<str<<endl;
-	ot<<str<<endl;
-	
+
 	cout<<endl<<"Input income"<<endl<<endl;
 	while(s!="0")
 		{
@@ -63,9 +63,7 @@ int main()
 		for(int i=0;i<N-1;i++)
 		{
 			cout<<x[i]<<" : "<<in[i]<<endl;
-			inc<<x[i]<<" : "<<in[i]<<endl;
 		}
-		
 		
 		cout<<endl;
 		
@@ -90,22 +88,22 @@ int main()
 		for(int j=0;j<M-1;j++)
 		{
 			cout<<y[j]<<" : "<<ou[j]<<endl;
-			ot<<y[j]<<" : "<<ou[j]<<endl;
 		}
 	
 		cout<<endl;
 		
 		int k;
 		int sum1=0,sum2=0,sum3=0,sum4=0,ttax=0,sal=0,vat=0,novat=0,others=0;
+
+		cout<<"Use Tax Calculation?"<<endl<<"1 : Yes"<<endl<<"2 : No"<<endl<<endl;
 		
-		cout<<"Use Tax Calculation?"<<endl<<"1 : Yes"<<endl<<"2 : No"<<endl;
-		cout<<"Your Choice : ";
+		cout<<"Please enter : ";
 		cin>>k;
 		if(k==1)
 		{
 			int taxes;
 			cout<<"Which tax type do you want to use?"<<endl; 
-			cout<<"1 : For SME"<<"  "<<"2 : Normal Business"<<endl;
+			cout<<"1 : SME"<<"  "<<"2 : Normal Business"<<endl;
 			cin>>taxes;
 			if(taxes==1)
 			{
@@ -133,11 +131,9 @@ int main()
 					ttax=sum3*0.20;
 				}
        			
-				cout<<"Total Income = "<<sum1<<endl;
-				inc<<"Total Income = "<<sum1<<endl;
-				
+				cout<<"Total Income = "<<sum1<<endl;	
 				cout<<"Total Outcome = "<<sum2<<endl;
-				ot<<"Total Outcome = "<<sum2<<endl;
+				cout<<"Total Tax = "<<ttax<<endl;
 				
 				if(sum2>sum1) 
 				{
@@ -165,7 +161,7 @@ int main()
 				
 				
 				cout<<"Total Outcome = "<<sum2<<endl;	
-				ot<<"Total Outcome = "<<sum2<<endl;
+	
 				
 				cout<<"Total Tax = "<<ttax<<endl;
 				
@@ -191,7 +187,7 @@ int main()
 			inc<<"Total Income = "<<sum1<<endl;
 			
 			cout<<"Total Outcome = "<<sum2<<endl;
-			ot<<"Total Outcome = "<<sum2<<endl;
+
 			
 			if(sum2>sum1) 
 			{
@@ -202,8 +198,6 @@ int main()
 				cout<<"Difference = "<<sum1-sum2<<endl;
 			}
 		}
-		inc.close();
-		ot.close();
 		
     return 0;
 }
