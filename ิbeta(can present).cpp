@@ -182,7 +182,7 @@ int main()
 				
 				cout<<endl;
 				
-				cout<<"Predict the total tax? (with average of income/outcome)"<<endl<<"1:Yes"<<"  "<<"2:No"<<"3:With Latest file"<<endl;
+				cout<<"Predict the total tax? (with average of income/outcome)"<<endl<<"1:Yes"<<"  "<<"2:No"<<"  "<<"3:With Latest file"<<endl;
 				cout<<"Please enter : ";
 				cin>>choice;
 				cout<<endl;
