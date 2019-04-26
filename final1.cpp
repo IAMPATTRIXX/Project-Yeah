@@ -560,7 +560,10 @@ int main()
 				{
 					fr=fr+inc[i];
 				}
-				sum1=sum1+inc[i];
+				sum1=sum1+inc[i];	
+			}
+			for(int i=0;i<M-1;i++)
+			{
 				sum2=sum2+ou[i];
 			}
 			cout<<"Total Income = "<<sum1<<endl;
