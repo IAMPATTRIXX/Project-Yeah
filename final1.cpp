@@ -636,7 +636,7 @@ if(q==2)
 		cout<<endl;
 		
 		int k;
-		int sum1=0,sum2=0,sum3=0,sum4=0,ttax=0,sal=0,vat=0,novat=0,others=0;
+		double sum1=0,sum2=0,sum3=0,sum4=0,ttax=0,sal=0,vat=0,novat=0,others=0;
 
 		cout<<"Use Tax Calculation?"<<endl<<"1 : Yes"<<endl<<"2 : No"<<endl<<endl;
 		
