@@ -86,36 +86,48 @@ void interestfirstmenu()
 
 int findingnemo(string x, vector<string> y)
 {
-
+    int t[20];
     for (int i = 0; i < y.size(); i++)
     {
         if (x == y[i])
         {
-            return i;
+            t[i] = i;
         }
+
+        else
+            t[0] = 0;
     }
+    return t[0];
 }
 int findingnemoint(int x, vector<int> y)
 {
+    int t[20];
     for (int i = 0; i < y.size(); i++)
     {
         if (x == y[i])
         {
-            return i;
+            t[i] = i;
         }
+
         else
-            return 0;
+            t[0] = 0;
     }
+    return t[0];
 }
 int findingnemodeposit(float x, vector<float> y)
 {
+    int t[20];
     for (int i = 0; i < y.size(); i++)
     {
         if (x == y[i])
         {
-            return i;
+            t[i] = i;
         }
+
+        else
+            t[0] = 0;
     }
+    return t[0];
 }
 int searchingfrominf(vector<string> inf)
 {
@@ -788,7 +800,7 @@ if(q==3)
                     }
 
                     cout
-                        << "Amount of deposit (Bath): ";
+                        << "Amount of deposit (Baht): ";
                     cin >> information.deposit;
                     cin.ignore();
                     cout << "****************************"
@@ -831,7 +843,9 @@ if(q==3)
             {
                 int choice;
 
-                cout << "Are you want to find the information [Yes input 0][No input 1]"
+                cout << "Are you want to find the information"
+                     << "\n"
+                     << " [Yes input 0][No input 1]"
                      << "\n";
                 cin >> information.input;
                 if (information.input == 0)
@@ -842,7 +856,7 @@ if(q==3)
                     cout << " Find Withdraw information [2]"
                          << "\n";
 
-                    cout << "INPUT";
+                    cout << "INPUT : ";
                     cin >> finding;
                 }
                 else if (information.input == 1)
@@ -858,33 +872,34 @@ if(q==3)
                     {
 
                         tariff = searchingfrominf(withdraw.recinfor);
-                        if (tariff == 0)
+                       /*  if (tariff == 0)
                         {
                             cout << "Not found !";
-                        }
+                        } */
+                        
                         cout << information.m[tariff] << "/" << information.d[tariff] << "/" << information.y[tariff] << " : " << information.recinfor[tariff] << " "
-                             << information.depo[tariff] << " Baht";
+                             << information.depo[tariff] << " Baht"<<"\n";
                     }
 
                     else if (choice == 2)
                     {
                         tariff = searchingfromdate(information.d);
-                        if (tariff == 0)
+                        /* if (tariff == 0)
                         {
                             cout << "Not found !";
-                        }
+                        } */
                         cout << information.m[tariff] << "/" << information.d[tariff] << "/" << information.y[tariff] << " : " << information.recinfor[tariff] << " "
-                             << information.depo[tariff] << " Baht";
+                             << information.depo[tariff] << " Baht"<<"\n";
                     }
                     else if (choice == 3)
                     {
                         tariff = searchingfromdeposit(information.depo);
-                        if (tariff == 0)
+                       /*  if (tariff == 0)
                         {
                             cout << "Not found !";
-                        }
+                        } */
                         cout << information.m[tariff] << "/" << information.d[tariff] << "/" << information.y[tariff] << " : " << information.recinfor[tariff] << " "
-                             << information.depo[tariff] << " Baht";
+                             << information.depo[tariff] << " Baht"<<"\n";
                     }
                 }
                 if (finding == 2)
@@ -894,33 +909,37 @@ if(q==3)
                     if (choice == 1)
                     {
                         tariff = searchingfrominf(withdraw.recinfor);
-                        if (tariff == 0)
+                       /*  if (tariff == 0)
                         {
                             cout << "Not found !";
-                        }
+                        } */
+                     
                         cout << withdraw.m[tariff] << "/" << withdraw.d[tariff] << "/" << withdraw.y[tariff] << " : " << withdraw.recinfor[tariff] << " "
-                             << withdraw.depo[tariff] << " Baht";
+                             << withdraw.depo[tariff] << " Baht"<<"\n";
                     }
 
                     else if (choice == 2)
                     {
                         tariff = searchingfromdate(withdraw.d);
-                        if (tariff == 0)
+                      /*   if (tariff == 0)
                         {
                             cout << "Not found !";
-                        }
+                        } */
+                    
                         cout << withdraw.m[tariff] << "/" << withdraw.d[tariff] << "/" << withdraw.y[tariff] << " : " << withdraw.recinfor[tariff] << " "
-                             << withdraw.depo[tariff] << " Baht";
+                             << withdraw.depo[tariff] << " Baht"<<"\n";
                     }
                     else if (choice == 3)
                     {
+            
                         tariff = searchingfromdeposit(withdraw.depo);
-                        if (tariff == 0)
+                        /* if (tariff == 0)
                         {
                             cout << "Not found !";
-                        }
+                        } */
+                     
                         cout << withdraw.m[tariff] << "/" << withdraw.d[tariff] << "/" << withdraw.y[tariff] << " : " << withdraw.recinfor[tariff] << " "
-                             << withdraw.depo[tariff] << " Baht";
+                             << withdraw.depo[tariff] << " Baht"<<"\n";
                     }
                 }
             }
